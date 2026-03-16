@@ -75,13 +75,6 @@ a:focus-visible {
   line-height: 1.1;
 }
 
-.header-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 128px;
-  gap: 20px;
-  align-items: start;
-}
-
 .header-main {
   display: grid;
   gap: 14px;
@@ -126,31 +119,6 @@ a:focus-visible {
 
 .link-row a::after {
   content: "]";
-}
-
-.photo-frame {
-  width: 128px;
-  min-height: 156px;
-  border: 2px solid rgba(35, 69, 111, 0.45);
-  overflow: hidden;
-  background: linear-gradient(180deg, #f8fbff 0%, #f6efe5 100%);
-}
-
-.portrait-image,
-.portrait-fallback {
-  width: 100%;
-  height: 100%;
-}
-
-.portrait-image {
-  object-fit: cover;
-}
-
-.portrait-fallback {
-  display: grid;
-  place-items: center;
-  color: var(--muted);
-  font-size: 1rem;
 }
 
 .cv-section {
@@ -317,15 +285,6 @@ a:focus-visible {
 
   .cv-title {
     font-size: 1.9rem;
-  }
-
-  .header-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-frame {
-    width: 112px;
-    min-height: 136px;
   }
 
   .contact-grid {

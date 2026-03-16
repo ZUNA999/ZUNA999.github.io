@@ -91,15 +91,6 @@ function renderHeader() {
     links.innerHTML = linkMarkup;
     links.hidden = !linkMarkup;
   }
-
-  const portraitSlot = document.querySelector("#portrait-slot");
-  if (portraitSlot) {
-    if (profile.photo) {
-      portraitSlot.innerHTML = `<img class="portrait-image" src="${escapeHtml(profile.photo)}" alt="${escapeHtml(profile.name || "个人照片")}">`;
-    } else {
-      portraitSlot.innerHTML = '<div class="portrait-fallback">照片</div>';
-    }
-  }
 }
 
 function renderEducation() {

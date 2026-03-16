@@ -8,7 +8,6 @@ window.siteData = {
     basicInfo: "XX大学硕士研究生 | XX专业 | 邮箱：yourname@example.com",
     researchDirections: ["研究方向一", "研究方向二", "研究方向三"],
     note: "这里可以放一句简短介绍，例如研究兴趣、目标问题或当前课题。",
-    photo: "",
     links: [
       {
         label: "邮箱",
