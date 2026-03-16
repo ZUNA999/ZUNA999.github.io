@@ -1,5 +1,4 @@
 // Replace the placeholder data in this file with your own academic profile.
-// 只需要改这个文件，页面结构会自动更新。
 
 window.siteData = {
   meta: {
@@ -146,6 +145,20 @@ window.siteData = {
         }
       ]
     }
+  ],
+  projects: [
+    // {
+    //   title: "Project Title",
+    //   meta: "Lab / Collaboration / 2026",
+    //   description: "Explain what the project does, why it matters, and your role in it.",
+    //   tags: ["Method", "Application", "Dataset"],
+    //   links: [
+    //     {
+    //       label: "Project page",
+    //       url: "#"
+    //     }
+    //   ]
+    // }
   ],
   timeline: [
     {

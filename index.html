@@ -25,12 +25,13 @@
       <span class="site-brand__name" id="brand-name">Your Name</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#updates">Updates</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#updates" data-nav="updates">Updates</a>
+      <a href="#publications" data-nav="publications">Publications</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#experience" data-nav="experience">Experience</a>
+      <a href="#teaching" data-nav="teaching">Teaching</a>
+      <a href="#contact" data-nav="contact">Contact</a>
     </nav>
   </header>
 
@@ -82,6 +83,17 @@
         <p class="section-note">Highlight representative papers first. Full lists can link to Google Scholar.</p>
       </div>
       <div class="publication-list" id="publications-list"></div>
+    </section>
+
+    <section class="content-section" id="projects" data-reveal>
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Research in Practice</p>
+          <h2>Projects</h2>
+        </div>
+        <p class="section-note">This section stays hidden until you add project entries to the data file.</p>
+      </div>
+      <div class="project-grid" id="projects-list"></div>
     </section>
 
     <section class="content-section" id="experience" data-reveal>
@@ -143,7 +155,7 @@
   <footer class="site-footer">
     <p>
       <span id="footer-name">Your Name</span>
-      <span class="site-footer__dot">•</span>
+      <span class="site-footer__dot">&middot;</span>
       <span id="footer-year"></span>
     </p>
   </footer>

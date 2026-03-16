@@ -70,6 +70,13 @@ function renderText(selector, value) {
   }
 }
 
+function setSectionVisibility(selector, isVisible) {
+  const section = document.querySelector(selector);
+  if (section) {
+    section.hidden = !isVisible;
+  }
+}
+
 function renderMeta() {
   const meta = siteData.meta || {};
   const profile = siteData.profile || {};
@@ -176,16 +183,17 @@ function renderLinks() {
 function renderUpdates() {
   const items = siteData.updates || [];
   const container = document.querySelector("#updates-list");
-  const section = document.querySelector("#updates");
 
-  if (!container || !section) {
+  if (!container) {
     return;
   }
 
   if (!items.length) {
-    section.hidden = true;
+    setSectionVisibility("#updates", false);
     return;
   }
+
+  setSectionVisibility("#updates", true);
 
   container.innerHTML = items
     .map(
@@ -203,16 +211,17 @@ function renderUpdates() {
 function renderPublications() {
   const items = siteData.publications || [];
   const container = document.querySelector("#publications-list");
-  const section = document.querySelector("#publications");
 
-  if (!container || !section) {
+  if (!container) {
     return;
   }
 
   if (!items.length) {
-    section.hidden = true;
+    setSectionVisibility("#publications", false);
     return;
   }
+
+  setSectionVisibility("#publications", true);
 
   container.innerHTML = items
     .map(
@@ -234,25 +243,60 @@ function renderPublications() {
     .join("");
 }
 
-function renderTimeline() {
-  const items = siteData.timeline || [];
-  const container = document.querySelector("#timeline-list");
-  const section = document.querySelector("#experience");
+function renderProjects() {
+  const items = siteData.projects || [];
+  const container = document.querySelector("#projects-list");
 
-  if (!container || !section) {
+  if (!container) {
     return;
   }
 
   if (!items.length) {
-    section.hidden = true;
+    setSectionVisibility("#projects", false);
     return;
   }
+
+  setSectionVisibility("#projects", true);
+
+  container.innerHTML = items
+    .map(
+      (item) => `
+        <article class="project-card">
+          <p class="project-card__meta">${escapeHtml(item.meta)}</p>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+          <div class="chip-row project-card__tags">
+            ${(item.tags || []).map((tag) => `<span class="chip">${escapeHtml(tag)}</span>`).join("")}
+          </div>
+          <div class="project-card__links">
+            ${(item.links || []).map(createLinkPill).join("")}
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderTimeline() {
+  const items = siteData.timeline || [];
+  const container = document.querySelector("#timeline-list");
+
+  if (!container) {
+    return;
+  }
+
+  if (!items.length) {
+    setSectionVisibility("#experience", false);
+    return;
+  }
+
+  setSectionVisibility("#experience", true);
 
   container.innerHTML = items
     .map(
       (item) => `
         <article class="timeline-item">
-          <p class="timeline-item__meta">${escapeHtml(item.period)} · ${escapeHtml(item.category)}</p>
+          <p class="timeline-item__meta">${escapeHtml(item.period)} &middot; ${escapeHtml(item.category)}</p>
           <h3>${escapeHtml(item.title)}</h3>
           <p><strong>${escapeHtml(item.organization)}</strong></p>
           <p>${escapeHtml(item.description)}</p>
@@ -292,6 +336,8 @@ function renderStackedList(selector, items, sectionSelector) {
   const visiblePanels = section.querySelectorAll(".stacked-panel:not([hidden])");
   if (!visiblePanels.length) {
     section.hidden = true;
+  } else {
+    section.hidden = false;
   }
 }
 
@@ -308,9 +354,11 @@ function renderContact() {
   note.textContent = contact.note || "";
 
   if (!(contact.details || []).length) {
-    section.hidden = true;
+    setSectionVisibility("#contact", false);
     return;
   }
+
+  setSectionVisibility("#contact", true);
 
   container.innerHTML = (contact.details || [])
     .map(
@@ -322,6 +370,13 @@ function renderContact() {
       `
     )
     .join("");
+}
+
+function syncNavigation() {
+  document.querySelectorAll("[data-nav]").forEach((link) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    link.hidden = !target || target.hidden;
+  });
 }
 
 function initReveal() {
@@ -362,11 +417,13 @@ renderProfile();
 renderLinks();
 renderUpdates();
 renderPublications();
+renderProjects();
 renderTimeline();
 renderStackedList("#teaching-list", siteData.teaching || [], "#teaching");
 renderStackedList("#service-list", siteData.service || [], "#teaching");
 renderStackedList("#awards-list", siteData.awards || [], "#teaching");
 renderStackedList("#talks-list", siteData.talks || [], "#teaching");
 renderContact();
+syncNavigation();
 renderFooterYear();
 initReveal();

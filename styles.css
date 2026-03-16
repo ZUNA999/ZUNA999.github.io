@@ -425,6 +425,7 @@ img {
 
 .update-grid,
 .publication-list,
+.project-grid,
 .timeline,
 .stacked-list,
 .detail-grid {
@@ -436,8 +437,13 @@ img {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .update-card,
 .publication-card,
+.project-card,
 .timeline-item,
 .stacked-item,
 .detail-item {
@@ -485,6 +491,30 @@ img {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 18px;
   align-items: start;
+}
+
+.project-card {
+  display: grid;
+  gap: 12px;
+}
+
+.project-card__meta {
+  margin: 0;
+  color: var(--accent-strong);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card__tags {
+  gap: 8px;
+}
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .publication-card__year {
@@ -661,6 +691,7 @@ img {
   }
 
   .update-grid,
+  .project-grid,
   .split-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -686,6 +717,7 @@ img {
 
   .stats-grid,
   .update-grid,
+  .project-grid,
   .split-grid,
   .detail-grid {
     grid-template-columns: 1fr;
