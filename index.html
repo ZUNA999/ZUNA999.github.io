@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic homepage for Your Name.">
+  <meta property="og:title" content="Your Name | Academic CV">
+  <meta property="og:description" content="Academic homepage and curriculum vitae.">
+  <meta property="og:type" content="website">
+  <title>Your Name | Academic CV</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="page-glow page-glow--top" aria-hidden="true"></div>
+  <div class="page-glow page-glow--bottom" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="#top" aria-label="Back to top">
+      <span class="site-brand__eyebrow">Academic CV</span>
+      <span class="site-brand__name" id="brand-name">Your Name</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#updates">Updates</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero panel" id="about">
+      <div class="hero__copy" data-reveal>
+        <p class="section-kicker">Research Profile</p>
+        <h1 class="hero__name" id="hero-name">Your Name</h1>
+        <p class="hero__role" id="hero-role">PhD Candidate in Your Field</p>
+        <p class="hero__summary" id="hero-summary">
+          I study an important academic problem and build methods that connect theory, data, and practice.
+        </p>
+        <div class="hero__actions" id="hero-actions"></div>
+        <div class="hero__focus">
+          <p class="hero__focus-label">Research interests</p>
+          <div class="chip-row" id="interest-list"></div>
+        </div>
+      </div>
+
+      <aside class="hero__aside" data-reveal>
+        <div class="profile-card">
+          <div class="profile-card__portrait" id="portrait-slot"></div>
+          <div class="profile-card__body">
+            <p class="profile-card__badge">Open to collaborations</p>
+            <dl class="detail-list" id="profile-details"></dl>
+          </div>
+        </div>
+        <div class="stats-grid" id="stats-grid"></div>
+      </aside>
+    </section>
+
+    <section class="content-section" id="updates" data-reveal>
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Current</p>
+          <h2>News and updates</h2>
+        </div>
+        <p class="section-note">Use this area for papers, talks, grants, or milestones.</p>
+      </div>
+      <div class="update-grid" id="updates-list"></div>
+    </section>
+
+    <section class="content-section" id="publications" data-reveal>
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Selected Work</p>
+          <h2>Publications</h2>
+        </div>
+        <p class="section-note">Highlight representative papers first. Full lists can link to Google Scholar.</p>
+      </div>
+      <div class="publication-list" id="publications-list"></div>
+    </section>
+
+    <section class="content-section" id="experience" data-reveal>
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Background</p>
+          <h2>Experience and education</h2>
+        </div>
+        <p class="section-note">A compact timeline keeps the site readable while preserving academic depth.</p>
+      </div>
+      <div class="timeline" id="timeline-list"></div>
+    </section>
+
+    <section class="content-section split-section" id="teaching" data-reveal>
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Academic Service</p>
+          <h2>Teaching, service, awards, and talks</h2>
+        </div>
+        <p class="section-note">These blocks are intentionally modular so you can delete any section cleanly.</p>
+      </div>
+      <div class="split-grid">
+        <div class="stacked-panel">
+          <h3>Teaching</h3>
+          <div class="stacked-list" id="teaching-list"></div>
+        </div>
+        <div class="stacked-panel">
+          <h3>Service</h3>
+          <div class="stacked-list" id="service-list"></div>
+        </div>
+        <div class="stacked-panel">
+          <h3>Awards and grants</h3>
+          <div class="stacked-list" id="awards-list"></div>
+        </div>
+        <div class="stacked-panel">
+          <h3>Talks and presentations</h3>
+          <div class="stacked-list" id="talks-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="contact" data-reveal>
+      <div class="contact-card">
+        <div class="contact-card__copy">
+          <p class="section-kicker">Contact</p>
+          <h2>Let people know how to reach you</h2>
+          <p id="contact-note">
+            Add your office, availability, and preferred contact channels here.
+          </p>
+        </div>
+        <div class="contact-card__meta">
+          <div class="detail-grid" id="contact-details"></div>
+          <div class="hero__actions hero__actions--compact" id="contact-actions"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <span id="footer-name">Your Name</span>
+      <span class="site-footer__dot">•</span>
+      <span id="footer-year"></span>
+    </p>
+  </footer>
+
+  <script src="site-data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
