@@ -1,164 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic homepage for Your Name.">
-  <meta property="og:title" content="Your Name | Academic CV">
-  <meta property="og:description" content="Academic homepage and curriculum vitae.">
+  <meta name="description" content="学术简历网站模板">
+  <meta property="og:title" content="你的姓名 | 学术简历">
+  <meta property="og:description" content="教育背景、科研项目、论文专利、荣誉和技能">
   <meta property="og:type" content="website">
-  <title>Your Name | Academic CV</title>
+  <title>你的姓名 | 学术简历</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body id="top">
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="page-glow page-glow--top" aria-hidden="true"></div>
-  <div class="page-glow page-glow--bottom" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="site-brand" href="#top" aria-label="Back to top">
-      <span class="site-brand__eyebrow">Academic CV</span>
-      <span class="site-brand__name" id="brand-name">Your Name</span>
-    </a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="#about" data-nav="about">About</a>
-      <a href="#updates" data-nav="updates">Updates</a>
-      <a href="#publications" data-nav="publications">Publications</a>
-      <a href="#projects" data-nav="projects">Projects</a>
-      <a href="#experience" data-nav="experience">Experience</a>
-      <a href="#teaching" data-nav="teaching">Teaching</a>
-      <a href="#contact" data-nav="contact">Contact</a>
-    </nav>
-  </header>
-
-  <main class="page-shell">
-    <section class="hero panel" id="about">
-      <div class="hero__copy" data-reveal>
-        <p class="section-kicker">Research Profile</p>
-        <h1 class="hero__name" id="hero-name">Your Name</h1>
-        <p class="hero__role" id="hero-role">PhD Candidate in Your Field</p>
-        <p class="hero__summary" id="hero-summary">
-          I study an important academic problem and build methods that connect theory, data, and practice.
-        </p>
-        <div class="hero__actions" id="hero-actions"></div>
-        <div class="hero__focus">
-          <p class="hero__focus-label">Research interests</p>
-          <div class="chip-row" id="interest-list"></div>
-        </div>
-      </div>
-
-      <aside class="hero__aside" data-reveal>
-        <div class="profile-card">
-          <div class="profile-card__portrait" id="portrait-slot"></div>
-          <div class="profile-card__body">
-            <p class="profile-card__badge">Open to collaborations</p>
-            <dl class="detail-list" id="profile-details"></dl>
+<body>
+  <main class="cv-page">
+    <header class="cv-header">
+      <h1 class="cv-title" id="profile-name">你的姓名</h1>
+      <div class="header-grid">
+        <div class="header-main">
+          <div class="header-row">
+            <p class="header-label">基本信息：</p>
+            <p class="header-value" id="basic-info">待填写</p>
           </div>
+          <div class="header-row">
+            <p class="header-label">研究方向：</p>
+            <p class="header-value" id="research-directions">待填写</p>
+          </div>
+          <p class="header-note" id="profile-note"></p>
+          <div class="link-row" id="profile-links"></div>
         </div>
-        <div class="stats-grid" id="stats-grid"></div>
-      </aside>
+        <div class="photo-frame" id="portrait-slot" aria-label="个人照片"></div>
+      </div>
+    </header>
+
+    <section class="cv-section" id="education-section">
+      <h2 class="section-title">教育背景</h2>
+      <div class="section-body" id="education-list"></div>
     </section>
 
-    <section class="content-section" id="updates" data-reveal>
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Current</p>
-          <h2>News and updates</h2>
-        </div>
-        <p class="section-note">Use this area for papers, talks, grants, or milestones.</p>
-      </div>
-      <div class="update-grid" id="updates-list"></div>
+    <section class="cv-section" id="projects-section">
+      <h2 class="section-title">科研项目</h2>
+      <div class="section-body" id="projects-list"></div>
     </section>
 
-    <section class="content-section" id="publications" data-reveal>
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Selected Work</p>
-          <h2>Publications</h2>
-        </div>
-        <p class="section-note">Highlight representative papers first. Full lists can link to Google Scholar.</p>
-      </div>
-      <div class="publication-list" id="publications-list"></div>
+    <section class="cv-section" id="publications-section">
+      <h2 class="section-title">论文、专利</h2>
+      <div class="section-body" id="publications-list"></div>
     </section>
 
-    <section class="content-section" id="projects" data-reveal>
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Research in Practice</p>
-          <h2>Projects</h2>
-        </div>
-        <p class="section-note">This section stays hidden until you add project entries to the data file.</p>
-      </div>
-      <div class="project-grid" id="projects-list"></div>
+    <section class="cv-section" id="honors-section">
+      <h2 class="section-title">其他荣誉</h2>
+      <div class="section-body" id="honors-list"></div>
     </section>
 
-    <section class="content-section" id="experience" data-reveal>
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Background</p>
-          <h2>Experience and education</h2>
-        </div>
-        <p class="section-note">A compact timeline keeps the site readable while preserving academic depth.</p>
-      </div>
-      <div class="timeline" id="timeline-list"></div>
+    <section class="cv-section" id="skills-section">
+      <h2 class="section-title">专业技能</h2>
+      <div class="section-body" id="skills-list"></div>
     </section>
 
-    <section class="content-section split-section" id="teaching" data-reveal>
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Academic Service</p>
-          <h2>Teaching, service, awards, and talks</h2>
-        </div>
-        <p class="section-note">These blocks are intentionally modular so you can delete any section cleanly.</p>
-      </div>
-      <div class="split-grid">
-        <div class="stacked-panel">
-          <h3>Teaching</h3>
-          <div class="stacked-list" id="teaching-list"></div>
-        </div>
-        <div class="stacked-panel">
-          <h3>Service</h3>
-          <div class="stacked-list" id="service-list"></div>
-        </div>
-        <div class="stacked-panel">
-          <h3>Awards and grants</h3>
-          <div class="stacked-list" id="awards-list"></div>
-        </div>
-        <div class="stacked-panel">
-          <h3>Talks and presentations</h3>
-          <div class="stacked-list" id="talks-list"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="contact" data-reveal>
-      <div class="contact-card">
-        <div class="contact-card__copy">
-          <p class="section-kicker">Contact</p>
-          <h2>Let people know how to reach you</h2>
-          <p id="contact-note">
-            Add your office, availability, and preferred contact channels here.
-          </p>
-        </div>
-        <div class="contact-card__meta">
-          <div class="detail-grid" id="contact-details"></div>
-          <div class="hero__actions hero__actions--compact" id="contact-actions"></div>
-        </div>
-      </div>
+    <section class="cv-section" id="contact-section">
+      <h2 class="section-title">联系方式</h2>
+      <div class="section-body" id="contact-list"></div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>
-      <span id="footer-name">Your Name</span>
-      <span class="site-footer__dot">&middot;</span>
-      <span id="footer-year"></span>
-    </p>
-  </footer>
 
   <script src="site-data.js"></script>
   <script src="main.js"></script>

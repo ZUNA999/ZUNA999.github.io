@@ -1,77 +1,56 @@
-# Academic Homepage Starter
+# Academic CV Template
 
-This repository contains a static academic homepage template for GitHub Pages.
-It is designed for a personal research profile rather than a plain resume page.
+这是一个简洁版中文学术简历模板，适合放在 GitHub Pages 上。
 
-## Included Sections
+当前页面结构：
 
-- About
-- Research interests
-- News / updates
-- Publications
-- Projects
-- Experience / education timeline
-- Teaching / service / awards / talks
-- Contact
+- 顶部基本信息
+- 教育背景
+- 科研项目
+- 论文、专利
+- 其他荣誉
+- 专业技能
+- 联系方式
 
-## Main File To Edit
+## 主要编辑文件
 
-Edit `site-data.js` first.
+优先修改 `site-data.js`。
 
-That file contains the content model for:
+这个文件里集中放了：
 
-- name, title, affiliation, summary
-- research interests
-- email, scholar, GitHub, CV links
-- publications
-- projects
-- teaching, service, awards, talks
-- contact details
+- 姓名、基本信息、研究方向、照片
+- 教育背景
+- 科研项目
+- 论文和专利
+- 荣誉
+- 技能
+- 联系方式
 
-You only need to edit `index.html` or `styles.css` if you want to change layout or visual design.
+## 当前模板特点
 
-## Recommended Editing Order
+- 没有动画
+- 没有复杂装饰
+- 信息密度更高
+- 更接近传统中文学术简历排版
+- 论文列表为空时会自动隐藏
 
-1. Replace the placeholder identity and affiliation fields in `site-data.js`.
-2. Update the `links` array with your real Scholar, GitHub, email, and CV links.
-3. If you have a portrait, place it in the repo, for example `assets/portrait.jpg`, then set `portrait` to `"assets/portrait.jpg"`.
-4. If you have a CV PDF, place it in the repo, for example `assets/cv.pdf`, then set `cvUrl` to `"assets/cv.pdf"`.
-5. Add project entries to the `projects` array when you are ready. If the array is empty, the whole section stays hidden.
-6. Empty lists automatically hide their matching sections or panels.
+## 如何替换照片
 
-## Local Preview
+1. 把照片放到仓库里，例如 `assets/photo.jpg`
+2. 把 `site-data.js` 中的 `profile.photo` 改成 `"assets/photo.jpg"`
 
-If Python is available, run:
+## 如何预览
 
 ```powershell
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+然后打开 `http://localhost:8000`
 
-You can also open `index.html` directly for a quick check.
-
-## Publish To GitHub Pages
-
-Because the repository name is `ZUNA999.github.io`, it is your GitHub user site repository.
-After the first push to the default branch, GitHub Pages should publish from the repository root.
-
-Useful commands:
+## 如何发布
 
 ```powershell
 git add .
-git commit -m "Refine academic homepage template"
-git push -u origin main
+git commit -m "Switch to concise academic CV layout"
+git push origin main
 ```
-
-Expected site URL:
-
-```text
-https://zuna999.github.io/
-```
-
-## Notes
-
-- The navigation automatically hides links for empty sections.
-- The `Projects` section is already wired up and will appear as soon as you add project data.
-- The template is intentionally modular so you can keep the homepage compact while expanding later.
