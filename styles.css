@@ -1,11 +1,14 @@
 :root {
   --page-width: 960px;
-  --paper: #ffffff;
-  --page: #f4f6f8;
-  --text: #111111;
-  --muted: #555555;
-  --line: #1f3b63;
-  --border: #d9dde3;
+  --paper: #fbf8f1;
+  --page: #e7edf3;
+  --text: #162235;
+  --muted: #5c6470;
+  --line: #23456f;
+  --border: #d1d8e2;
+  --header-bg: #eef3f9;
+  --section-blue: #f7fbff;
+  --section-warm: #fff9f0;
 }
 
 *,
@@ -20,7 +23,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--page);
+  background:
+    linear-gradient(180deg, #dfe8f1 0%, #edf1e9 100%);
   color: var(--text);
   font-family: "Times New Roman", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif;
   line-height: 1.65;
@@ -47,13 +51,20 @@ a:focus-visible {
 
 .cv-page {
   width: min(var(--page-width), calc(100% - 24px));
-  margin: 16px auto;
+  margin: 20px auto;
   padding: 24px 28px 32px;
   background: var(--paper);
+  border: 1px solid var(--border);
+  border-top: 8px solid var(--line);
+  box-shadow: 0 12px 32px rgba(35, 69, 111, 0.08);
 }
 
 .cv-header {
   margin-bottom: 18px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, var(--header-bg) 0%, #f7f1e6 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
 .cv-title {
@@ -88,6 +99,7 @@ a:focus-visible {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
+  color: var(--line);
 }
 
 .header-value {
@@ -119,9 +131,9 @@ a:focus-visible {
 .photo-frame {
   width: 128px;
   min-height: 156px;
-  border: 1px solid #777777;
+  border: 2px solid rgba(35, 69, 111, 0.45);
   overflow: hidden;
-  background: #fafafa;
+  background: linear-gradient(180deg, #f8fbff 0%, #f6efe5 100%);
 }
 
 .portrait-image,
@@ -143,24 +155,52 @@ a:focus-visible {
 
 .cv-section {
   margin-top: 20px;
+  padding: 14px 18px 16px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--line);
+  border-radius: 10px;
+}
+
+#education-section,
+#publications-section,
+#contact-section {
+  background: var(--section-blue);
+}
+
+#projects-section,
+#honors-section,
+#skills-section {
+  background: var(--section-warm);
 }
 
 .section-title {
   margin: 0 0 12px;
   padding-bottom: 6px;
-  border-bottom: 4px solid var(--line);
+  border-bottom: 3px solid var(--line);
   font-size: 1.2rem;
   line-height: 1.2;
+  color: var(--line);
 }
 
 .section-body {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .entry {
   display: grid;
   gap: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(35, 69, 111, 0.18);
+}
+
+.entry:last-child,
+.publication-item:last-child,
+.honor-item:last-child,
+.skill-item:last-child,
+.contact-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .entry__head {
@@ -174,6 +214,7 @@ a:focus-visible {
 .entry__bullet {
   font-size: 1rem;
   line-height: 1;
+  color: var(--line);
 }
 
 .entry__title {
@@ -223,6 +264,8 @@ a:focus-visible {
   gap: 8px;
   align-items: start;
   font-size: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(35, 69, 111, 0.18);
 }
 
 .publication-item__index {
@@ -241,6 +284,8 @@ a:focus-visible {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 8px;
   align-items: start;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(35, 69, 111, 0.18);
 }
 
 .contact-grid {
@@ -263,6 +308,11 @@ a:focus-visible {
   .cv-page {
     width: min(var(--page-width), calc(100% - 12px));
     padding: 18px 16px 24px;
+  }
+
+  .cv-header,
+  .cv-section {
+    padding: 14px 14px 16px;
   }
 
   .cv-title {
