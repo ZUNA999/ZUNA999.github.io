@@ -12,7 +12,7 @@ This repository contains a concise academic CV website built for GitHub Pages.
 - Publications and patents
 - Honors
 - Skills
-- Research experience
+- Relevant experience
 
 ## Main File To Edit
 
@@ -23,11 +23,11 @@ It contains the content for:
 - name, profile summary, research directions
 - contact shown in the header
 - education
+- relevant experience
 - research projects
 - publications and patents
 - honors
 - skills
-- research experience
 
 ## Notes
 
