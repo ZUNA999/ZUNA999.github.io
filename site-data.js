@@ -1,13 +1,13 @@
 window.siteData = {
   meta: {
     siteTitle: "李绍杰 | 学术简历",
-    description: "李绍杰的学术简历页面，重点展示教育背景、相关经历、科研项目和专业技能。"
+    description: "李绍杰的学术简历页面，重点展示教育背景、研究经历、科研项目和专业技能。"
   },
   profile: {
     name: "李绍杰",
     basicInfo: "Research Assistant，香港中文大学（CUHK） | 人工智能硕士 | 本科：深圳大学物联网工程",
-    researchDirections: ["强化学习", "计算机视觉", "自然语言处理", "嵌入式智能系统"],
-    note: "目前关注强化学习、计算机视觉与深度学习模型在实际任务中的应用，具备机器学习、图像处理、嵌入式开发和平台系统实现经验。",
+    researchDirections: ["强化学习", "计算机视觉", "自然语言处理", "智能系统与终端平台"],
+    note: "目前关注强化学习、计算机视觉与智能系统在实际场景中的落地，具备机器学习、图像处理、嵌入式开发和端到端平台系统实现经验。",
     links: []
   },
   education: [
@@ -31,7 +31,7 @@ window.siteData = {
       organization: "香港中文大学（CUHK）",
       role: "Research Assistant",
       period: "2025.05.21 - 至今",
-      note: "当前在研工作可在明确课题后继续拆分并补充到科研项目中。"
+      note: "当前主要围绕智能零售终端与系统平台相关项目开展研究与工程实现。"
     },
     {
       organization: "香港物流机器人研究中心",
@@ -40,6 +40,15 @@ window.siteData = {
     }
   ],
   projects: [
+    {
+      title: "RoboStore 无人零售终端系统",
+      type: "智能零售系统 / 软硬件一体化平台",
+      period: "2025.05.21 - 至今",
+      role: "负责后端服务、终端购物端、微信小程序端、设备联调工具及部署文档等核心工程实现，打通库存管理、订单创建、支付、离线取货码、设备出货、异常退款与对账流程。",
+      summary: "项目面向无人零售柜与智能售货机，构建集远程仓储管理、机台端自助购物、支付结算、自动出货与设备联调于一体的端到端闭环系统。系统采用 FastAPI + SQLAlchemy 构建后端服务，配套 Electron + React 触摸屏客户端、微信小程序购物端，以及设备侧扫码验签模拟工具和本地部署文档，重点处理库存预占、离线令牌、防重放、支付回调、多端协同以及线上交易流程与线下物理出货流程的融合问题。",
+      tags: ["FastAPI", "SQLAlchemy", "Electron", "React", "微信小程序", "设备联调"],
+      links: []
+    },
     {
       title: "单目投影 3D 成像平台",
       type: "研究平台开发 / 计算机视觉",
@@ -108,8 +117,8 @@ window.siteData = {
   honors: [],
   skills: [
     "编程语言：Python、C++、C、JavaScript、MATLAB",
-    "开发框架与工具：Qt、React、Django、MySQL",
-    "研究与工程能力：机器学习建模、图像处理、前后端交互、数据库管理、串口通信",
+    "开发框架与工具：Qt、React、Django、MySQL、FastAPI",
+    "研究与工程能力：机器学习建模、图像处理、前后端交互、数据库管理、设备联调与端到端系统实现",
     "英语能力：雅思 7 分"
   ],
   contact: [
