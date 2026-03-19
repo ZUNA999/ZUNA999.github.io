@@ -130,6 +130,7 @@ a:focus-visible {
 }
 
 #education-section,
+#experience-section,
 #publications-section,
 #contact-section {
   background: var(--section-blue);

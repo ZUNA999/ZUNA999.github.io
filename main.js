@@ -172,6 +172,38 @@ function renderProjects() {
     .join("");
 }
 
+function renderExperience() {
+  const items = siteData.experience || [];
+  const container = document.querySelector("#experience-list");
+
+  if (!container) {
+    return;
+  }
+
+  if (!items.length) {
+    setSectionVisible("#experience-section", false);
+    return;
+  }
+
+  setSectionVisible("#experience-section", true);
+  container.innerHTML = items
+    .map(
+      (item) => `
+        <article class="entry">
+          <div class="entry__head">
+            <span class="entry__bullet">◆</span>
+            <span class="entry__title">${escapeHtml(item.organization)}</span>
+            <span class="entry__meta">${escapeHtml(item.role)}</span>
+            <span class="entry__period">${escapeHtml(item.period)}</span>
+          </div>
+          ${item.summary ? `<div class="entry__body"><p>${escapeHtml(item.summary)}</p></div>` : ""}
+          ${item.work ? `<div class="entry__body"><p><strong>主要内容：</strong>${escapeHtml(item.work)}</p></div>` : ""}
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderPublications() {
   const items = siteData.publications || [];
   const container = document.querySelector("#publications-list");
@@ -285,6 +317,7 @@ function renderContact() {
 renderMeta();
 renderHeader();
 renderEducation();
+renderExperience();
 renderProjects();
 renderPublications();
 renderHonors();
