@@ -295,3 +295,46 @@ a:focus-visible {
     padding-left: 20px;
   }
 }
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--page) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    line-height: 1.55;
+  }
+
+  .cv-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 8mm 9mm 10mm;
+    border: 0;
+    border-top: 8px solid var(--line);
+    box-shadow: none;
+    background: var(--paper);
+  }
+
+  .cv-header,
+  .cv-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
