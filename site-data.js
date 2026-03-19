@@ -5,7 +5,7 @@ window.siteData = {
   },
   profile: {
     name: "李绍杰",
-    basicInfo: "Research Assistant，香港中文大学（CUHK） | 人工智能硕士 | 本科：深圳大学物联网工程",
+    basicInfo: "1999.06.26 | Research Assistant，香港中文大学（CUHK） | 人工智能硕士 | 本科：深圳大学物联网工程",
     researchDirections: ["大语言模型", "多模态 Agent 落地", "强化学习", "计算机视觉", "机器人与智能系统"],
     note: "目前关注大语言模型与多模态 Agent 在实际场景中的落地，同时关注强化学习、计算机视觉与机器人系统相关问题，具备机器学习、图像处理、嵌入式开发和端到端智能系统实现经验。",
     links: []
