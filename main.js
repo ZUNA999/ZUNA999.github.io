@@ -196,8 +196,7 @@ function renderExperience() {
             <span class="entry__meta">${escapeHtml(item.role)}</span>
             <span class="entry__period">${escapeHtml(item.period)}</span>
           </div>
-          ${item.summary ? `<div class="entry__body"><p>${escapeHtml(item.summary)}</p></div>` : ""}
-          ${item.work ? `<div class="entry__body"><p><strong>主要内容：</strong>${escapeHtml(item.work)}</p></div>` : ""}
+          ${item.note ? `<div class="entry__body"><p class="entry__note">${escapeHtml(item.note)}</p></div>` : ""}
         </article>
       `
     )
