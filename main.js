@@ -44,6 +44,20 @@ function createLink(link) {
   return `<a href="${escapeHtml(link.url)}"${target}>${escapeHtml(link.label)}</a>`;
 }
 
+function formatContactValue(value) {
+  const text = String(value ?? "");
+
+  if (/^https?:\/\//i.test(text)) {
+    return `<a href="${escapeHtml(text)}" target="_blank" rel="noreferrer">${escapeHtml(text)}</a>`;
+  }
+
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
+    return `<a href="mailto:${escapeHtml(text)}">${escapeHtml(text)}</a>`;
+  }
+
+  return escapeHtml(text);
+}
+
 function renderMeta() {
   const meta = siteData.meta || {};
   const profile = siteData.profile || {};
@@ -304,7 +318,7 @@ function renderContact() {
           (item) => `
             <article class="contact-item">
               <p class="contact-item__label">${escapeHtml(item.label)}：</p>
-              <p class="contact-item__value">${escapeHtml(item.value)}</p>
+              <p class="contact-item__value">${formatContactValue(item.value)}</p>
             </article>
           `
         )

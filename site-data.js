@@ -124,11 +124,11 @@ window.siteData = {
   contact: [
     {
       label: "邮箱",
-      value: "待补充"
+      value: "sz13530022878@outlook.com"
     },
     {
       label: "GitHub",
-      value: "待补充"
+      value: "https://github.com/ZUNA999"
     }
   ]
 };
