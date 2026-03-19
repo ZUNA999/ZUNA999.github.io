@@ -6,14 +6,13 @@ This repository contains a concise academic CV website built for GitHub Pages.
 
 ## Current Sections
 
-- Basic profile
+- Basic profile and contact
 - Education
-- Relevant experience
 - Research projects
 - Publications and patents
 - Honors
 - Skills
-- Contact
+- Research experience
 
 ## Main File To Edit
 
@@ -22,13 +21,13 @@ Edit `site-data.js` first.
 It contains the content for:
 
 - name, profile summary, research directions
+- contact shown in the header
 - education
-- relevant experience
 - research projects
 - publications and patents
 - honors
 - skills
-- contact
+- research experience
 
 ## Notes
 

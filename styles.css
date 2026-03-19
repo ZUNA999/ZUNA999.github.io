@@ -113,6 +113,26 @@ a:focus-visible {
   font-size: 0.98rem;
 }
 
+.header-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(35, 69, 111, 0.18);
+  font-size: 0.98rem;
+}
+
+.header-contact__item {
+  display: inline-flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.header-contact__label {
+  color: var(--line);
+  font-weight: 700;
+}
+
 .link-row a::before {
   content: "[";
 }
@@ -131,8 +151,7 @@ a:focus-visible {
 
 #education-section,
 #experience-section,
-#publications-section,
-#contact-section {
+#publications-section {
   background: var(--section-blue);
 }
 
@@ -247,30 +266,13 @@ a:focus-visible {
 }
 
 .honor-item,
-.skill-item,
-.contact-item {
+.skill-item {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 8px;
   align-items: start;
   padding-bottom: 8px;
   border-bottom: 1px dashed rgba(35, 69, 111, 0.18);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 24px;
-}
-
-.contact-item__value,
-.contact-item__label {
-  margin: 0;
-}
-
-.contact-item__label {
-  font-weight: 700;
-  color: var(--text);
 }
 
 @media (max-width: 720px) {
@@ -286,10 +288,6 @@ a:focus-visible {
 
   .cv-title {
     font-size: 1.9rem;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
   }
 
   .entry__body,

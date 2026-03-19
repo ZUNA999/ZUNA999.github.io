@@ -30,8 +30,7 @@ window.siteData = {
     {
       organization: "香港中文大学（CUHK）",
       role: "Research Assistant",
-      period: "2025.05.21 - 至今",
-      note: "当前主要围绕智能零售终端与系统平台相关项目开展研究与工程实现。"
+      period: "2025.05.21 - 至今"
     },
     {
       organization: "香港物流机器人研究中心",

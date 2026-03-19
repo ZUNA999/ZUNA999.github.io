@@ -105,6 +105,23 @@ function renderHeader() {
     links.innerHTML = linkMarkup;
     links.hidden = !linkMarkup;
   }
+
+  const headerContact = document.querySelector("#header-contact");
+  if (headerContact) {
+    const items = siteData.contact || [];
+    const markup = items
+      .map(
+        (item) => `
+          <div class="header-contact__item">
+            <span class="header-contact__label">${escapeHtml(item.label)}：</span>
+            <span class="header-contact__value">${formatContactValue(item.value)}</span>
+          </div>
+        `
+      )
+      .join("");
+    headerContact.innerHTML = markup;
+    headerContact.hidden = !markup;
+  }
 }
 
 function renderEducation() {
@@ -210,7 +227,6 @@ function renderExperience() {
             <span class="entry__meta">${escapeHtml(item.role)}</span>
             <span class="entry__period">${escapeHtml(item.period)}</span>
           </div>
-          ${item.note ? `<div class="entry__body"><p class="entry__note">${escapeHtml(item.note)}</p></div>` : ""}
         </article>
       `
     )
@@ -297,42 +313,11 @@ function renderSkills() {
     .join("");
 }
 
-function renderContact() {
-  const items = siteData.contact || [];
-  const container = document.querySelector("#contact-list");
-
-  if (!container) {
-    return;
-  }
-
-  if (!items.length) {
-    setSectionVisible("#contact-section", false);
-    return;
-  }
-
-  setSectionVisible("#contact-section", true);
-  container.innerHTML = `
-    <div class="contact-grid">
-      ${items
-        .map(
-          (item) => `
-            <article class="contact-item">
-              <p class="contact-item__label">${escapeHtml(item.label)}：</p>
-              <p class="contact-item__value">${formatContactValue(item.value)}</p>
-            </article>
-          `
-        )
-        .join("")}
-    </div>
-  `;
-}
-
 renderMeta();
 renderHeader();
 renderEducation();
-renderExperience();
 renderProjects();
 renderPublications();
 renderHonors();
 renderSkills();
-renderContact();
+renderExperience();
