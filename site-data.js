@@ -5,7 +5,7 @@ window.siteData = {
   },
   profile: {
     name: "李绍杰",
-    basicInfo: "人工智能硕士 | 新南威尔士大学（UNSW） | 本科：深圳大学物联网工程",
+    basicInfo: "Research Assistant，香港中文大学（CUHK） | 人工智能硕士 | 本科：深圳大学物联网工程",
     researchDirections: ["强化学习", "计算机视觉", "自然语言处理", "嵌入式智能系统"],
     note: "目前关注强化学习、计算机视觉与深度学习模型在实际任务中的应用，具备机器学习、图像处理、嵌入式开发和平台系统实现经验。",
     links: []
@@ -27,6 +27,13 @@ window.siteData = {
     }
   ],
   experience: [
+    {
+      organization: "香港中文大学（CUHK）",
+      role: "Research Assistant",
+      period: "2025.05.21 - 至今",
+      summary: "当前研究助理经历，建议后续补充具体课题、合作导师、研究方向和阶段性成果。",
+      work: "可补充你目前负责的数据处理、模型训练、系统开发、实验设计、文献调研或论文支持等内容。"
+    },
     {
       organization: "香港物流机器人研究中心",
       role: "助理工程师",
