@@ -1,53 +1,53 @@
-# Academic CV Template
+# Academic CV Website
 
-这是一个简洁版中文学术简历模板，适合放在 GitHub Pages 上。
+Live site: https://zuna999.github.io/
 
-当前页面结构：
+This repository contains a concise academic CV website built for GitHub Pages.
 
-- 顶部基本信息
-- 教育背景
-- 相关经历
-- 科研项目
-- 论文、专利
-- 其他荣誉
-- 专业技能
-- 联系方式
+## Current Sections
 
-## 主要编辑文件
+- Basic profile
+- Education
+- Relevant experience
+- Research projects
+- Publications and patents
+- Honors
+- Skills
+- Contact
 
-优先修改 `site-data.js`。
+## Main File To Edit
 
-这个文件里集中放了：
+Edit `site-data.js` first.
 
-- 姓名、基本信息、研究方向
-- 教育背景
-- 相关经历
-- 科研项目
-- 论文和专利
-- 荣誉
-- 技能
-- 联系方式
+It contains the content for:
 
-## 当前模板特点
+- name, profile summary, research directions
+- education
+- relevant experience
+- research projects
+- publications and patents
+- honors
+- skills
+- contact
 
-- 没有动画
-- 没有复杂装饰
-- 信息密度更高
-- 更接近传统中文学术简历排版
-- 论文列表为空时会自动隐藏
+## Notes
 
-## 如何预览
+- The site is intentionally compact and information-first.
+- Empty sections such as publications are hidden automatically.
+- The current content is adapted from a resume into a more academic layout.
+
+## Local Preview
 
 ```powershell
 python -m http.server 8000
 ```
 
-然后打开 `http://localhost:8000`
+Then open `http://localhost:8000`.
 
-## 如何发布
+## Publish
 
 ```powershell
 git add .
-git commit -m "Switch to concise academic CV layout"
+git commit -m "Update academic CV website"
 git push origin main
 ```
