@@ -67,6 +67,13 @@ a:focus-visible {
   border-radius: 10px;
 }
 
+.header-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 116px;
+  gap: 22px;
+  align-items: start;
+}
+
 .cv-title {
   margin: 0 0 18px;
   text-align: center;
@@ -131,6 +138,23 @@ a:focus-visible {
 .header-contact__label {
   color: var(--line);
   font-weight: 700;
+}
+
+.profile-photo {
+  width: 116px;
+  height: 150px;
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid rgba(35, 69, 111, 0.45);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(35, 69, 111, 0.12);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .link-row a::before {
@@ -265,6 +289,17 @@ a:focus-visible {
   margin: 0;
 }
 
+.publication-item__rank {
+  color: var(--line);
+  font-weight: 700;
+}
+
+.publication-group-title {
+  margin: 2px 0 0;
+  font-size: 1rem;
+  color: var(--line);
+}
+
 .honor-item,
 .skill-item {
   display: grid;
@@ -288,6 +323,16 @@ a:focus-visible {
 
   .cv-title {
     font-size: 1.9rem;
+  }
+
+  .header-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 130px;
+    justify-self: center;
   }
 
   .entry__body,

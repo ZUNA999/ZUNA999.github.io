@@ -44,6 +44,10 @@ function createLink(link) {
   return `<a href="${escapeHtml(link.url)}"${target}>${escapeHtml(link.label)}</a>`;
 }
 
+function joinNonEmpty(values, separator) {
+  return values.filter((value) => value !== undefined && value !== null && value !== "").join(separator);
+}
+
 function formatContactValue(value) {
   const text = String(value ?? "");
 
@@ -121,6 +125,18 @@ function renderHeader() {
       .join("");
     headerContact.innerHTML = markup;
     headerContact.hidden = !markup;
+  }
+
+  const photoWrap = document.querySelector("#profile-photo-wrap");
+  const photo = document.querySelector("#profile-photo");
+  if (photoWrap && photo) {
+    if (profile.photo) {
+      photo.src = profile.photo;
+      photo.alt = `${profile.name || "个人"}肖像`;
+      photoWrap.hidden = false;
+    } else {
+      photoWrap.hidden = true;
+    }
   }
 }
 
@@ -234,29 +250,87 @@ function renderExperience() {
 }
 
 function renderPublications() {
-  const items = siteData.publications || [];
+  const papers = siteData.publications || [];
+  const patents = siteData.patents || [];
   const container = document.querySelector("#publications-list");
 
   if (!container) {
     return;
   }
 
-  if (!items.length) {
+  if (!papers.length && !patents.length) {
     setSectionVisible("#publications-section", false);
     return;
   }
 
   setSectionVisible("#publications-section", true);
-  container.innerHTML = items
-    .map(
-      (item, index) => `
-        <article class="publication-item">
-          <span class="publication-item__index">${escapeHtml(item.index || `[${index + 1}]`)}</span>
-          <p class="publication-item__text">${escapeHtml(item.text)}</p>
-        </article>
-      `
-    )
-    .join("");
+
+  const paperMarkup = papers.length
+    ? `
+      ${patents.length ? '<h3 class="publication-group-title">论文</h3>' : ""}
+      ${papers.map(renderPublicationItem).join("")}
+    `
+    : "";
+
+  const patentMarkup = patents.length
+    ? `
+      ${papers.length ? '<h3 class="publication-group-title">发明专利</h3>' : ""}
+      ${patents.map(renderPatentItem).join("")}
+    `
+    : "";
+
+  container.innerHTML = `${paperMarkup}${patentMarkup}`;
+}
+
+function renderPublicationItem(item, index) {
+  if (item.text) {
+    return `
+      <article class="publication-item">
+        <span class="publication-item__index">${escapeHtml(item.index || `[${index + 1}]`)}</span>
+        <p class="publication-item__text">${escapeHtml(item.text)}</p>
+      </article>
+    `;
+  }
+
+  const title = joinNonEmpty([
+    item.title,
+    item.translation ? `（${item.translation}）` : "",
+    item.documentType ? `[${item.documentType}]` : ""
+  ], "");
+  const source = joinNonEmpty([item.venue, item.year], ", ");
+  const meta = joinNonEmpty([item.indexing, item.status], "；");
+
+  return `
+    <article class="publication-item">
+      <span class="publication-item__index">${escapeHtml(item.index || `[${index + 1}]`)}</span>
+      <p class="publication-item__text">
+        ${item.authors ? `${escapeHtml(item.authors)}. ` : ""}
+        ${escapeHtml(title)}.
+        ${source ? `${escapeHtml(source)}. ` : ""}
+        ${meta ? `${escapeHtml(meta)}. ` : ""}
+        ${item.rank ? `<strong class="publication-item__rank">${escapeHtml(item.rank)}</strong>` : ""}
+      </p>
+    </article>
+  `;
+}
+
+function renderPatentItem(item, index) {
+  const patentType = item.patentType || "发明专利";
+  const title = item.title ? `${item.title}[P]` : "专利名称待补充[P]";
+  const number = item.number ? `${item.number}. ` : "";
+  const status = item.status ? `状态：${item.status}. ` : "";
+
+  return `
+    <article class="publication-item">
+      <span class="publication-item__index">${escapeHtml(item.index || `[P${index + 1}]`)}</span>
+      <p class="publication-item__text">
+        ${escapeHtml(patentType)}：${escapeHtml(title)}.
+        ${escapeHtml(number)}
+        ${escapeHtml(status)}
+        ${item.rank ? `<strong class="publication-item__rank">${escapeHtml(item.rank)}</strong>` : ""}
+      </p>
+    </article>
+  `;
 }
 
 function renderHonors() {

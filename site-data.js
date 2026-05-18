@@ -6,6 +6,7 @@ window.siteData = {
   profile: {
     name: "李绍杰",
     basicInfo: "1999.6.26",
+    photo: "Profile.jpg",
     researchDirections: ["多模态 Agent 落地", "具身智能", "强化学习", "计算机视觉", "机器人与智能系统"],
     note: "目前关注多模态 Agent 与具身智能在实际场景中的落地，同时关注强化学习、计算机视觉与机器人系统相关问题，具备机器学习、图像处理、嵌入式开发和端到端智能系统实现经验。",
     links: []
@@ -133,9 +134,16 @@ window.siteData = {
   publications: [
     {
       index: "[1]",
-      text: "Replay-time Closed-loop Evaluation Protocol for Learned 3D Surgical Dynamics / World Models. NeurIPS 2026 Evaluations & Datasets Track, Submitted / Under Review, 2026. Second author."
+      title: "Replay-time Closed-loop Evaluation Protocol for Learned 3D Surgical Dynamics / World Models",
+      translation: "面向三维手术动力学/世界模型的回放时闭环评估协议",
+      documentType: "C",
+      venue: "NeurIPS 2026 Evaluations & Datasets Track",
+      year: "2026",
+      status: "Submitted / Under Review",
+      rank: "导师一作、本人二作"
     }
   ],
+  patents: [],
   honors: [],
   skills: [
     "研究方向与方法：强化学习、计算机视觉、深度学习、自然语言处理",
