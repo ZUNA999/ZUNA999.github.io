@@ -133,7 +133,7 @@ window.siteData = {
   publications: [
     {
       index: "[1]",
-      text: "Replay-time closed-loop evaluation protocol for learned 3D surgical dynamics / world models. Submitted to NeurIPS 2026 Evaluations & Datasets Track, Under Review. Second author."
+      text: "Replay-time Closed-loop Evaluation Protocol for Learned 3D Surgical Dynamics / World Models. NeurIPS 2026 Evaluations & Datasets Track, Submitted / Under Review, 2026. Second author."
     }
   ],
   honors: [],
