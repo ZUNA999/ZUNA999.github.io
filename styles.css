@@ -105,13 +105,13 @@ a:focus-visible {
 
 .header-layout {
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 16px;
   align-items: stretch;
 }
 
 .header-content {
-  padding: 18px 20px;
+  padding: 14px 16px;
   border: 1px solid rgba(35, 69, 111, 0.16);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.72);
@@ -119,29 +119,29 @@ a:focus-visible {
 }
 
 .cv-title {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   text-align: center;
-  font-size: 2.25rem;
+  font-size: 2.05rem;
   font-weight: 700;
   line-height: 1.1;
 }
 
 .header-main {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .header-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   align-items: baseline;
-  font-size: 1rem;
+  font-size: 0.96rem;
 }
 
 .header-label {
   margin: 0;
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: var(--line);
 }
@@ -154,7 +154,7 @@ a:focus-visible {
 .header-note {
   margin: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .link-row {
@@ -167,10 +167,10 @@ a:focus-visible {
 .header-contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
-  padding-top: 6px;
+  gap: 6px 16px;
+  padding-top: 5px;
   border-top: 1px dashed rgba(35, 69, 111, 0.18);
-  font-size: 0.93rem;
+  font-size: 0.9rem;
 }
 
 .header-contact__item {
@@ -380,11 +380,11 @@ a:focus-visible {
   }
 
   .header-content {
-    padding: 14px;
+    padding: 12px;
   }
 
   .profile-photo {
-    width: min(170px, 70%);
+    width: min(210px, 76%);
     justify-self: center;
   }
 
