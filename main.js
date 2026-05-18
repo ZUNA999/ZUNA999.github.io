@@ -1,4 +1,14 @@
-const siteData = window.siteData || {};
+const rootData = window.siteData || {};
+let activeLanguage = rootData.defaultLanguage || Object.keys(rootData.locales || {})[0] || "en";
+let siteData = getLocalizedData(activeLanguage);
+
+function getLocalizedData(language) {
+  return rootData.locales?.[language] || rootData;
+}
+
+function getLabels() {
+  return siteData.labels || {};
+}
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => {
@@ -60,6 +70,52 @@ function formatContactValue(value) {
   }
 
   return escapeHtml(text);
+}
+
+function renderLanguageSwitcher() {
+  const container = document.querySelector("#language-switcher");
+  const languages = rootData.languages || [];
+
+  if (!container || !languages.length) {
+    return;
+  }
+
+  container.innerHTML = languages
+    .map(
+      (language) => `
+        <button class="language-switcher__button${language.code === activeLanguage ? " is-active" : ""}" type="button" data-language="${escapeHtml(language.code)}" aria-pressed="${language.code === activeLanguage}">
+          ${escapeHtml(language.label)}
+        </button>
+      `
+    )
+    .join("");
+
+  container.querySelectorAll("[data-language]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextLanguage = button.getAttribute("data-language");
+      if (!nextLanguage || nextLanguage === activeLanguage) {
+        return;
+      }
+
+      activeLanguage = nextLanguage;
+      siteData = getLocalizedData(activeLanguage);
+      renderAll();
+    });
+  });
+}
+
+function renderLabels() {
+  const labels = getLabels();
+
+  document.documentElement.lang = activeLanguage === "zh-TW" ? "zh-Hant" : activeLanguage;
+  renderText("#label-basic-info", labels.basicInfo || "Date of Birth:");
+  renderText("#label-research-directions", labels.researchDirections || "Research Interests:");
+  renderText("#section-title-education", labels.education || "Education");
+  renderText("#section-title-publications", labels.publications || "Publications & Invention Patents");
+  renderText("#section-title-projects", labels.projects || "Research Projects");
+  renderText("#section-title-experience", labels.experience || "Relevant Experience");
+  renderText("#section-title-honors", labels.honors || "Honors");
+  renderText("#section-title-skills", labels.skills || "Technical Skills");
 }
 
 function renderMeta() {
@@ -175,6 +231,7 @@ function renderEducation() {
 function renderProjects() {
   const items = siteData.projects || [];
   const container = document.querySelector("#projects-list");
+  const labels = getLabels();
 
   if (!container) {
     return;
@@ -208,7 +265,7 @@ function renderProjects() {
             <span class="entry__period">${escapeHtml(item.period)}</span>
           </div>
           <div class="entry__body">
-            <p><strong>负责内容：</strong>${escapeHtml(item.role)}</p>
+            <p><strong>${escapeHtml(labels.role || "Role:")}</strong>${escapeHtml(item.role)}</p>
           </div>
           ${item.summary ? `<div class="entry__body"><p>${escapeHtml(item.summary)}</p></div>` : ""}
           ${tags}
@@ -253,6 +310,7 @@ function renderPublications() {
   const papers = siteData.publications || [];
   const patents = siteData.patents || [];
   const container = document.querySelector("#publications-list");
+  const labels = getLabels();
 
   if (!container) {
     return;
@@ -267,14 +325,14 @@ function renderPublications() {
 
   const paperMarkup = papers.length
     ? `
-      ${patents.length ? '<h3 class="publication-group-title">论文</h3>' : ""}
+      ${patents.length ? `<h3 class="publication-group-title">${escapeHtml(labels.papers || "Publications")}</h3>` : ""}
       ${papers.map(renderPublicationItem).join("")}
     `
     : "";
 
   const patentMarkup = patents.length
     ? `
-      ${papers.length ? '<h3 class="publication-group-title">发明专利</h3>' : ""}
+      ${papers.length ? `<h3 class="publication-group-title">${escapeHtml(labels.patents || "Invention Patents")}</h3>` : ""}
       ${patents.map(renderPatentItem).join("")}
     `
     : "";
@@ -315,10 +373,11 @@ function renderPublicationItem(item, index) {
 }
 
 function renderPatentItem(item, index) {
-  const patentType = item.patentType || "发明专利";
+  const labels = getLabels();
+  const patentType = item.patentType || labels.patentType || "Invention Patent";
   const title = item.title ? `${item.title}[P]` : "专利名称待补充[P]";
   const number = item.number ? `${item.number}. ` : "";
-  const status = item.status ? `状态：${item.status}. ` : "";
+  const status = item.status ? `${labels.patentStatus || "Status:"}${item.status}. ` : "";
 
   return `
     <article class="publication-item">
@@ -387,11 +446,17 @@ function renderSkills() {
     .join("");
 }
 
-renderMeta();
-renderHeader();
-renderEducation();
-renderPublications();
-renderProjects();
-renderHonors();
-renderSkills();
-renderExperience();
+function renderAll() {
+  renderMeta();
+  renderLabels();
+  renderLanguageSwitcher();
+  renderHeader();
+  renderEducation();
+  renderPublications();
+  renderProjects();
+  renderHonors();
+  renderSkills();
+  renderExperience();
+}
+
+renderAll();
