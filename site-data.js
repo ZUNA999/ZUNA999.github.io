@@ -2,8 +2,8 @@ window.siteData = {
   defaultLanguage: "en",
   languages: [
     { code: "en", label: "EN" },
-    { code: "zh-CN", label: "简中" },
-    { code: "zh-TW", label: "繁中" }
+    { code: "zh-TW", label: "繁" },
+    { code: "zh-CN", label: "简" }
   ],
   locales: {
     en: {
@@ -30,8 +30,8 @@ window.siteData = {
         name: "Shaojie Li",
         basicInfo: "1999.06.26",
         photo: "Profile.jpg",
-        researchDirections: ["Embodied Intelligence", "Multimodal Agents", "Reinforcement Learning", "Computer Vision", "Robotics"],
-        note: "Research Assistant at The Chinese University of Hong Kong. Interests: embodied intelligence, multimodal agents, RL, computer vision, and robotics.",
+        researchDirections: ["Uncertainty-aware Reality Grounding", "Egocentric Multimodal AI", "XR/AR Glasses", "Risk-aware AR Display", "Human-centered Evaluation"],
+        note: "Research Assistant at The Chinese University of Hong Kong. Interests: uncertainty-aware reality grounding for egocentric multimodal AI in XR glasses, candidate-anchor misranking diagnosis, risk-aware AR display, and user-centered evaluation.",
         links: []
       },
       education: [
@@ -209,8 +209,8 @@ window.siteData = {
         name: "李绍杰",
         basicInfo: "1999.6.26",
         photo: "Profile.jpg",
-        researchDirections: ["具身智能", "多模态 Agent 落地", "强化学习", "计算机视觉", "机器人与智能系统"],
-        note: "目前为香港中文大学 Research Assistant，关注具身智能、多模态 Agent、强化学习、计算机视觉与机器人系统。",
+        researchDirections: ["不确定性感知真实世界锚定", "第一人称多模态 AI", "XR/AR 眼镜系统", "风险感知 AR 显示", "用户中心评价"],
+        note: "目前为香港中文大学 Research Assistant，研究兴趣为 XR 眼镜第一人称多模态 AI 的不确定性感知真实世界锚定、候选锚点误排诊断、风险感知 AR 显示与用户中心评价。",
         links: []
       },
       education: [
@@ -389,8 +389,8 @@ window.siteData = {
         name: "李紹杰",
         basicInfo: "1999.6.26",
         photo: "Profile.jpg",
-        researchDirections: ["具身智能", "多模態 Agent 落地", "強化學習", "計算機視覺", "機器人與智能系統"],
-        note: "目前為香港中文大學 Research Assistant，關注具身智能、多模態 Agent、強化學習、計算機視覺與機器人系統。",
+        researchDirections: ["不確定性感知真實世界錨定", "第一人稱多模態 AI", "XR/AR 眼鏡系統", "風險感知 AR 顯示", "用戶中心評價"],
+        note: "目前為香港中文大學 Research Assistant，研究興趣為 XR 眼鏡第一人稱多模態 AI 的不確定性感知真實世界錨定、候選錨點誤排診斷、風險感知 AR 顯示與用戶中心評價。",
         links: []
       },
       education: [
