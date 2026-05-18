@@ -133,7 +133,7 @@ window.siteData = {
   publications: [
     {
       index: "[1]",
-      text: "Replay-time closed-loop evaluation protocol for learned 3D surgical dynamics / world models. Submitted to NeurIPS 2026 Evaluations & Datasets Track / Under Review（二作）. 负责构建 replay-time 闭环 probing pipeline，包括 MPC candidate replay、risk-gated ranking、proxy rollout、dual-oracle attribution、risk calibration 与匿名可复现提交包，用于诊断 predicted-vs-proxy mismatch。"
+      text: "Replay-time closed-loop evaluation protocol for learned 3D surgical dynamics / world models. Submitted to NeurIPS 2026 Evaluations & Datasets Track, Under Review. Second author."
     }
   ],
   honors: [],
