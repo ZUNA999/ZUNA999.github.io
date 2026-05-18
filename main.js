@@ -316,8 +316,8 @@ function renderSkills() {
 renderMeta();
 renderHeader();
 renderEducation();
-renderProjects();
 renderPublications();
+renderProjects();
 renderHonors();
 renderSkills();
 renderExperience();
