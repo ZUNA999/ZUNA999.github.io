@@ -58,6 +58,15 @@ window.siteData = {
       links: []
     },
     {
+      title: "智能单秤流量评估系统",
+      type: "医疗健康 / 时序信号分析",
+      period: "工作项目",
+      role: "负责称重时序数据清洗、切段、人工窗口标注工具、训练数据集构建、一维 CNN 模型训练与单文件推理 UI 实现。",
+      summary: "项目基于单个高精度称重传感器输入预测体液流量曲线、累计量曲线及核心评估指标，并将模型从直接预测累计量升级为先预测流量再积分得到累计量的物理约束结构，以提升曲线单调性和指标稳定性。",
+      tags: ["时间序列", "一维 CNN", "NumPy", "Pandas", "模型评估"],
+      links: []
+    },
+    {
       title: "单目投影 3D 成像平台",
       type: "研究平台开发 / 计算机视觉",
       period: "2021.11 - 2023.04",
@@ -121,7 +130,12 @@ window.siteData = {
       links: []
     }
   ],
-  publications: [],
+  publications: [
+    {
+      index: "[1]",
+      text: "Replay-time closed-loop evaluation protocol for learned 3D surgical dynamics / world models. Submitted to NeurIPS 2026 Evaluations & Datasets Track / Under Review（二作）. 负责构建 replay-time 闭环 probing pipeline，包括 MPC candidate replay、risk-gated ranking、proxy rollout、dual-oracle attribution、risk calibration 与匿名可复现提交包，用于诊断 predicted-vs-proxy mismatch。"
+    }
+  ],
   honors: [],
   skills: [
     "研究方向与方法：强化学习、计算机视觉、深度学习、自然语言处理",
