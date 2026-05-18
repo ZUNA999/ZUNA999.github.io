@@ -30,8 +30,8 @@ window.siteData = {
         name: "Shaojie Li",
         basicInfo: "1999.06.26",
         photo: "Profile.jpg",
-        researchDirections: ["Uncertainty-aware Reality Grounding", "Egocentric Multimodal AI", "XR/AR Glasses", "Risk-aware AR Display", "Human-centered Evaluation"],
-        note: "Research Assistant at The Chinese University of Hong Kong. Interests: uncertainty-aware reality grounding for egocentric multimodal AI in XR glasses, candidate-anchor misranking diagnosis, risk-aware AR display, and user-centered evaluation.",
+        researchDirections: ["Embodied Intelligence", "Multimodal Agents", "Reinforcement Learning", "Computer Vision", "Robotics", "XR/AR Reality Grounding"],
+        note: "Research Assistant at The Chinese University of Hong Kong. Interests: embodied intelligence, multimodal agents, reinforcement learning, computer vision, robotics, and uncertainty-aware grounding for XR/AR systems.",
         links: []
       },
       education: [
@@ -171,7 +171,7 @@ window.siteData = {
         "Research methods: reinforcement learning, computer vision, deep learning, embodied intelligence",
         "Systems and experiments: machine learning modeling, image processing, model training and evaluation, end-to-end intelligent system implementation",
         "Platforms and devices: robotic system integration, embedded development, serial communication, device control and terminal deployment",
-        "Programming and tools: Python, C++, C, MATLAB, FastAPI, Qt, MySQL",
+        "Programming and tools: Python, C++, C, MATLAB, JavaScript, HTML/CSS, FastAPI, Qt, MySQL",
         "English proficiency: IELTS 7.0"
       ],
       contact: [
@@ -209,8 +209,8 @@ window.siteData = {
         name: "李绍杰",
         basicInfo: "1999.6.26",
         photo: "Profile.jpg",
-        researchDirections: ["不确定性感知真实世界锚定", "第一人称多模态 AI", "XR/AR 眼镜系统", "风险感知 AR 显示", "用户中心评价"],
-        note: "目前为香港中文大学 Research Assistant，研究兴趣为 XR 眼镜第一人称多模态 AI 的不确定性感知真实世界锚定、候选锚点误排诊断、风险感知 AR 显示与用户中心评价。",
+        researchDirections: ["具身智能", "多模态 Agent 落地", "强化学习", "计算机视觉", "机器人与智能系统", "XR/AR 真实世界锚定"],
+        note: "目前为香港中文大学 Research Assistant，关注具身智能、多模态 Agent 落地、强化学习、计算机视觉、机器人系统，以及 XR/AR 场景中的不确定性感知真实世界锚定。",
         links: []
       },
       education: [
@@ -351,7 +351,7 @@ window.siteData = {
         "研究方向与方法：强化学习、计算机视觉、深度学习、具身智能",
         "系统与实验能力：机器学习建模、图像处理、模型训练与评估、端到端智能系统实现",
         "平台与设备能力：机械臂相关系统联调、嵌入式开发、串口通信、设备控制与终端部署",
-        "开发工具与语言：Python、C++、C、MATLAB、FastAPI、Qt、MySQL",
+        "开发工具与语言：Python、C++、C、MATLAB、JavaScript、HTML/CSS、FastAPI、Qt、MySQL",
         "英语能力：雅思 7 分"
       ],
       contact: [
@@ -389,8 +389,8 @@ window.siteData = {
         name: "李紹杰",
         basicInfo: "1999.6.26",
         photo: "Profile.jpg",
-        researchDirections: ["不確定性感知真實世界錨定", "第一人稱多模態 AI", "XR/AR 眼鏡系統", "風險感知 AR 顯示", "用戶中心評價"],
-        note: "目前為香港中文大學 Research Assistant，研究興趣為 XR 眼鏡第一人稱多模態 AI 的不確定性感知真實世界錨定、候選錨點誤排診斷、風險感知 AR 顯示與用戶中心評價。",
+        researchDirections: ["具身智能", "多模態 Agent 落地", "強化學習", "計算機視覺", "機器人與智能系統", "XR/AR 真實世界錨定"],
+        note: "目前為香港中文大學 Research Assistant，關注具身智能、多模態 Agent 落地、強化學習、計算機視覺、機器人系統，以及 XR/AR 場景中的不確定性感知真實世界錨定。",
         links: []
       },
       education: [
@@ -531,7 +531,7 @@ window.siteData = {
         "研究方向與方法：強化學習、計算機視覺、深度學習、具身智能",
         "系統與實驗能力：機器學習建模、圖像處理、模型訓練與評估、端到端智能系統實現",
         "平台與設備能力：機械臂相關系統聯調、嵌入式開發、串口通信、設備控制與終端部署",
-        "開發工具與語言：Python、C++、C、MATLAB、FastAPI、Qt、MySQL",
+        "開發工具與語言：Python、C++、C、MATLAB、JavaScript、HTML/CSS、FastAPI、Qt、MySQL",
         "英語能力：雅思 7 分"
       ],
       contact: [
