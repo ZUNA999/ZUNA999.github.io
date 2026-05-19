@@ -29,7 +29,7 @@ window.siteData = {
       profile: {
         name: "Shaojie Li",
         basicInfo: "1999.06.26",
-        photo: "Profile-display.jpg",
+        photo: "Profile-display-hq.jpg",
         researchDirections: ["Embodied Intelligence", "Multimodal Agents", "Reinforcement Learning", "Computer Vision", "Robotics", "XR/AR Reality Grounding"],
         note: "Research Assistant at The Chinese University of Hong Kong. Interests: embodied intelligence, multimodal agents, reinforcement learning, computer vision, robotics, and uncertainty-aware grounding for XR/AR systems.",
         links: []
@@ -208,7 +208,7 @@ window.siteData = {
       profile: {
         name: "李绍杰",
         basicInfo: "1999.6.26",
-        photo: "Profile-display.jpg",
+        photo: "Profile-display-hq.jpg",
         researchDirections: ["具身智能", "多模态 Agent 落地", "强化学习", "计算机视觉", "机器人与智能系统", "XR/AR 真实世界锚定"],
         note: "目前为香港中文大学 Research Assistant，关注具身智能、多模态 Agent 落地、强化学习、计算机视觉、机器人系统，以及 XR/AR 场景中的不确定性感知真实世界锚定。",
         links: []
@@ -388,7 +388,7 @@ window.siteData = {
       profile: {
         name: "李紹杰",
         basicInfo: "1999.6.26",
-        photo: "Profile-display.jpg",
+        photo: "Profile-display-hq.jpg",
         researchDirections: ["具身智能", "多模態 Agent 落地", "強化學習", "計算機視覺", "機器人與智能系統", "XR/AR 真實世界錨定"],
         note: "目前為香港中文大學 Research Assistant，關注具身智能、多模態 Agent 落地、強化學習、計算機視覺、機器人系統，以及 XR/AR 場景中的不確定性感知真實世界錨定。",
         links: []
